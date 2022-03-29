@@ -13,7 +13,7 @@ extern bool banSlightSideB;
 
 GCReport getGCReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
-}
-}
+} // namespace MeleeF1
+} // namespace DACAlgorithms
 
 #endif

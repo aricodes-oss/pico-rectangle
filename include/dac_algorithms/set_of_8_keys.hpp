@@ -11,6 +11,6 @@ namespace SetOf8Keys {
 void actuate8KeysReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
 }
-}
+} // namespace DACAlgorithms
 
 #endif

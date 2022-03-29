@@ -1,9 +1,11 @@
 #include "other/nunchuk.hpp"
 #include "global.hpp"
+#include "hardware/gpio.h"
+#include "hardware/i2c.h"
 #include "pico/multicore.h"
 #include "pico/stdlib.h"
-#include "hardware/i2c.h"
 #include "pico/time.h"
+#include <cstdint>
 #include <stdio.h>
 
 i2c_inst_t *i2c = i2c0;
@@ -15,6 +17,8 @@ void init_i2c() {
     return;
   }
 
+  gpio_init(NUNCHUK_SDA_PIN);
+  gpio_init(NUNCHUK_SCL_PIN);
   gpio_set_function(NUNCHUK_SDA_PIN, GPIO_FUNC_I2C);
   gpio_set_function(NUNCHUK_SCL_PIN, GPIO_FUNC_I2C);
 
@@ -31,15 +35,17 @@ void init_nunchuk() {
 
   i2c_write_blocking(i2c, ADDR, INIT, 2, false);
   i2c_write_blocking(i2c, ADDR, &INIT[2], 2, false);
+  i2c_write_blocking(i2c, ADDR, &STATUS_REPORT, 1, false);
 }
 
 void read_nunchuk() {
-  i2c_write_blocking(i2c, ADDR, &STATUS_REPORT, 1, false);
   i2c_read_blocking(i2c, ADDR, nunchuk_report_data, 2, false);
+  i2c_write_blocking(i2c, ADDR, &STATUS_REPORT, 1, false);
 }
 
 void fetch_nunchuk_reports() {
-    while (true) {
-        read_nunchuk();
-    }
+  while (true) {
+    read_nunchuk();
+    sleep_ms(1);
+  }
 }

@@ -1,0 +1,14 @@
+External -> Internal
+
+Nunchuk:
+Yellow -> Yellow
+White -> White
+Red -> Black
+Green -> Red
+
+GC:
+White -> Red
+Brown -> NC
+Red -> Green
+Black -> Black
+Yellow -> Black

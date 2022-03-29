@@ -11,5 +11,5 @@ namespace WiredFightPadProDefault {
 void actuateWFPPReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
 }
-}
+} // namespace DACAlgorithms
 #endif

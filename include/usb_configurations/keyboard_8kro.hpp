@@ -3,10 +3,8 @@
 
 #include "communication_protocols/usb.hpp"
 
-namespace USBConfigurations
-{
-namespace Keyboard8KRO
-{
+namespace USBConfigurations {
+namespace Keyboard8KRO {
 
 using KeyId = uint8_t;
 
@@ -16,7 +14,7 @@ extern KeyId hidReport[8];
 
 void enterMode(void actuateReportFunc(void));
 
-}
-}
+} // namespace Keyboard8KRO
+} // namespace USBConfigurations
 
 #endif

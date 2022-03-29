@@ -3,8 +3,9 @@
 
 #include "global.hpp"
 #include "hardware/gpio.h"
-#include "pico/stdlib.h"
 #include "hardware/i2c.h"
+#include "pico/stdlib.h"
+#include <cstdint>
 #include <stdio.h>
 
 #define NUNCHUK_SDA_PIN 8
@@ -21,6 +22,7 @@ const uint8_t ADDR = 0x52; // This is the same for all models of nunchuk
 // as one byte and then either writing it with the next byte
 // or requesting a read dataframe. State data is stored at 0x00
 const uint8_t STATUS_REPORT = 0x00;
+const uint8_t IDENT_MESSAGE = 0x20;
 
 extern i2c_inst_t *i2c;
 extern uint8_t nunchuk_report_data[2];

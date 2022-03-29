@@ -11,6 +11,6 @@ namespace UltimateF1 {
 GCReport getGCReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
 }
-}
+} // namespace DACAlgorithms
 
 #endif

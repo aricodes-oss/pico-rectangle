@@ -1,0 +1,25 @@
+GP0  - Start
+GP2  - Right
+GP3  - Down
+GP4  - Left
+GP5  - L
+GP8  - Nunchuk SDA (yellow)
+GP9  - Nunchuk SCL (white)
+GP14 - A
+
+GP27 - R
+GP26 - B
+GP22 - Y
+GP21 - X
+GP19 - Z
+GP17 - Up
+
+VSYS - +5V (white)
+GP28 - GC data (red)
+
+3v3(OUT) - Nunchuk power (green/red)
+
+GND - Nunchuk GND (black)
+GND - GC GND (black)
+GND - DPad GND
+GND - Facebutton GND
